@@ -1,0 +1,26 @@
+{
+  "name": "mcp-vue-svg-refactor",
+  "version": "1.0.0",
+  "description": "MCP Server for Vue SVG refactoring",
+  "type": "module",
+  "bin": {
+    "mcp-vue-svg-refactor": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": ["mcp", "vue", "svg", "refactor"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "fast-xml-parser": "^4.5.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
