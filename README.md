@@ -37,19 +37,24 @@ npm link
 
 ### 設定 Claude Code
 
-在 `~/.claude/mcp_settings.json` 中加入：
+  使用 `claude mcp add` 指令將 MCP Server 加入當前 Profile：
 
-```json
-{
-  "mcpServers": {
-    "vue-svg-refactor": {
-      "command": "mcp-vue-svg-refactor"
-    }
-  }
-}
-```
+  ```bash
+  claude mcp add -s user vue-svg-refactor mcp-vue-svg-refactor
+  ```
 
-重啟 Claude Code 即可使用。
+  確認是否成功：
+
+  ```bash
+  claude mcp list
+  # 應看到 vue-svg-refactor 出現在清單中
+  ```
+
+  完全重啟 Claude Code 後即可使用。
+
+  > **多 Profile 設定：** `-s user` 只會寫入當前使用中的 Profile。
+  > 若需設定其他 Profile，需切換後再分別執行一次相同指令，
+  > 或直接編輯對應的 `~/.claude-<profile>/.claude.json`。
 
 ## 可用工具
 
@@ -204,7 +209,7 @@ defineProps<{
 {
   "needsFix": true,
   "fixed": true,
-  "message": "✅ 已自動修正為 currentColor"
+  "message": "已自動修正為 currentColor"
 }
 ```
 
